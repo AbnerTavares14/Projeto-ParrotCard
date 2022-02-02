@@ -1,0 +1,37 @@
+body{
+    padding-top: 10px;
+    background-color: #EEF9BF;
+}
+
+header h1{
+    color: #75B79E;
+    font-family: 'Roboto', sans-serif;
+    width: 640px;
+    height: 63px;
+    font-weight: 700;
+    font-size: 56px;
+    margin: 0 auto;
+}
+
+.container-cards{
+    width: 638px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 117px;
+    height: 146px;
+    background-color: #A7E9AF;
+    margin-top: 47px;
+}
+
+.card img{
+    width: 100px;
+    height: 100px;
+}

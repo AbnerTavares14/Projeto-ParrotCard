@@ -3,6 +3,11 @@ body{
     background-color: #EEF9BF;
 }
 
+header{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 header h1{
     color: #75B79E;
     font-family: 'Roboto', sans-serif;
@@ -13,12 +18,18 @@ header h1{
     margin: 0 auto;
 }
 
-.container-cards{
-    width: 638px;
+nav{
+    width: 100%;
     display: flex;
+}
+
+.container-cards{
+    width: 800px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
-    flex-wrap: wrap;
 }
 
 .card{
@@ -29,9 +40,36 @@ header h1{
     height: 146px;
     background-color: #A7E9AF;
     margin-top: 47px;
+    position: relative;
 }
 
 .card img{
     width: 100px;
     height: 100px;
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+.back-face {
+    transform: rotateY(180deg);
+}
+
+
+.card .borda .back-face{
+    transform: rotateY(0deg);
+}
+
+.card .borda .front{
+    transform: rotateY(-180deg);
 }

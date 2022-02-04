@@ -2,11 +2,11 @@ let cards = document.querySelector(".container-cards");
 
 let gifs = ["bobrossparrot.gif","explodyparrot.gif","fiestaparrot.gif","metalparrot.gif","revertitparrot.gif","tripletsparrot.gif","unicornparrot.gif"];
 
+let gifsSelecionados = [];
+
 gifs.sort(comparador);
 
 let gifs2 = document.querySelectorAll(".cards");
-
-const cartas = [];
 
 let quantidade;
 let flag = false;
@@ -28,20 +28,24 @@ function CriaBaralho(elemento){
         <div class="card"><img src="front 1.png" alt="imgcard"/></div>`;
     }
     let cards2 = document.querySelectorAll(".card");
+    combinar(cards2.length);
     for(let i = 0; i < cards2.length; i++){
-        cartas.push(cards2[i]);
-    }
-    cartas.sort(comparador);
-    for(let i = 0; i < cartas.length; i++){
         cards2[i].innerHTML = `
         <div class="card" onclick="selecionarCarta(this)">
         <div class="front face"><img src="front 1.png" alt="imgcard"/> </div>
-        <div class="back-face face"><img src="${gifs[i]}"/></div>
+        <div class="back-face face"><img src="${gifsSelecionados[i]}"/></div>
         </div>`;
     }
 }
 
-
+function combinar(numero){
+    for(let i = 0; i < numero/2; i++){
+        gifsSelecionados.push(gifs[i]);
+    }
+    for(let j = 0; j < gifsSelecionados.length;j++){
+        gifsSelecionados.push(gifsSelecionados[j]);
+    }
+}
 
 
 function selecionarCarta(elemento){
@@ -56,5 +60,11 @@ function selecionarCarta(elemento){
 
 
 function comparador() { 
-	return Math.random() - 0.5; 
+    return Math.random() - 0.5; 
 }
+// if(numero == 4){
+//     for(let i = 0; i<2;i++){
+//         gifsSelecionados.push(gifs[i]);
+//     }
+//     gifsSelecionados
+// }

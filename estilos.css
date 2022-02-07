@@ -25,7 +25,7 @@ nav{
 
 .container-cards{
     width: 800px;
-    padding: 10px;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -41,17 +41,19 @@ nav{
     background-color: #A7E9AF;
     margin-top: 47px;
     position: relative;
+
+    border-radius: 5px;
 }
 
 .card img{
     width: 100px;
     height: 100px;
+    
 }
 
 .face{
     width: 100%;
     height: 100%;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,15 +63,36 @@ nav{
     transform-style: preserve-3d;
 }
 
-.back-face {
+.front {
     transform: rotateY(180deg);
 }
 
 
-.card .borda .back-face{
+.card .selecionado .front{
     transform: rotateY(0deg);
 }
 
-.card .borda .front{
+.card .selecionado .back-face{
     transform: rotateY(-180deg);
+}
+
+.contador{
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    color: red;
+}
+
+@media(max-width: 335px){
+    .container-cards{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-left: 90px;
+    }
+    header h1{
+        font-size: 36px;
+        align: center;
+        width: 250px;
+        text-align: center;
+    }
 }

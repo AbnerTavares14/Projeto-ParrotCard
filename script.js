@@ -2,10 +2,7 @@ let cards = document.querySelector(".container-cards");
 
 let gifs = ["bobrossparrot.gif", "explodyparrot.gif", "fiestaparrot.gif", "metalparrot.gif", "revertitparrot.gif", "tripletsparrot.gif", "unicornparrot.gif"];
 
-let embaralha = [];
-
 let primeiro = null;
-let segundo = null;
 
 let jogadas = 0;
 
@@ -14,15 +11,13 @@ let primeiroSelecionado = null;
 let clicavel = true;
 
 let gifsSelecionados = [];
+
 let arrayVerificador = [];
 
 let k = 0;
 
-let contador = null;
-
-
 gifs.sort(comparador);
-console.log(gifs);
+
 
 let gifs2 = document.querySelectorAll(".cards");
 
@@ -59,7 +54,7 @@ function CriaBaralho(elemento) {
     for (let i = 0; i < cards2.length; i++) {
         cards2[i].innerHTML = `
         <div class="card" onclick="selecionarCarta(this,${i})" data-identifier="card">
-        <div class="black-face face" data-identifier="back-face"><img src="front 1.png" alt="imgcard"/> </div>
+        <div class="back-face face" data-identifier="back-face"><img src="front 1.png" alt="imgcard"/> </div>
         <div class="front face" data-identifier="front-face"><img src="${gifsSelecionados[i]}"/></div>
         </div>`;
     }
@@ -110,7 +105,7 @@ function selecionarCarta(elemento, indice) {
                    primeiro = null;
                    primeiroSelecionado = null;
                    flagVerificadora();
-               }},2000);
+               }},1000);
        }
    }
 }
